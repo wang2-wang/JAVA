@@ -1,0 +1,8 @@
+package List;
+/*
+* List集合：有序(按照插入顺序存储)，允许重复，索引访问
+* LinkedList   插入删除快，访问慢
+* 快慢指针找中间元素
+* */
+public class list {
+}
