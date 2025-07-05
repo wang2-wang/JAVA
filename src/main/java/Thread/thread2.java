@@ -4,8 +4,8 @@ public class thread2 {
     /*实现Runnable接口
     * 定义线程任务类实现Runnable接口，重写run方法，创建任务类对象
     *创建一个线程（thread）对象，将任务对象交给Thread处理。start启动
-    *
     * 可以继续继承其他类。实现其他接口，但不能直接启动，且无返回值
+    * 具体看ProducterRunnable
     * */
     public static void main(String[] args) {
         //创建线程任务对象
