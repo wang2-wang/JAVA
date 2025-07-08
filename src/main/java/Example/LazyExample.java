@@ -20,6 +20,6 @@ public class LazyExample {
 }
 
 /*
-* instance 是一个静态变量，用于存储该类的唯一实例
+* Instance 是一个静态变量，用于存储该类的唯一实例
 *static属于类而非对象，保证全局唯一性
 * */
