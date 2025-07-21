@@ -6,7 +6,7 @@ import java.util.Arrays;
 * 由final修饰，所以不能被继承
 *String字符串长度固定，内容不能变，使用+改变长度会产生一个新的String实例，会在内存创建新的字符串对象
 * String定义的字符串会放在常量池
-*StringBuilder和StringBuffer类是可变字符串类
+*StringBuilder和StringBuffer类是可变字符串类,StringBuffer是线程安全的
 * */
 
 /*
@@ -36,15 +36,30 @@ public class string {
 
         String s8 = "123";
         String s9 = "456";
-        String s10 = "123"+"456";
-        String s11 = s8+s9;                   //相当于new了一个对象
+        String s10 = "123"+"456";              //常量池
+        String s11 = s8+s9;                   //相当于new了一个对象，堆
         String s12 = "123456";
         System.out.println(s10 == s11);     //false
         System.out.println(s10 == s12);     //true
-
+        /*字符串拼接
+        *如果拼接的是编译期常量（如 "coder" + "coder"），编译器会直接优化为 "codercoder"，并放入常量池。
+        * 如果拼接涉及变量（如 s1 + s2），编译器无法优化，会在运行时生成新对象（堆内存）。
+        * */
+        String s1 = "coder";        //常量池
+        String s2 = "coder";        //常量池，与s1指向同一常量池对象（s1 == s2 为 true）
+        String s3 = "coder" + s2;   //堆
+        String s4 = "coder" + "coder";  //常量池
+        String s5 = s1 + s2;        //堆，与s3指向不同对象
+        System.out.println(s3 == s4);   //false
+        System.out.println(s3 == s5);   //false
+        System.out.println(s4 == "codercoder"); //true，s4 和 "codercoder" 均指向常量池中的同一对象
         /*
         * intern() 的作用:如果字符串常量池中已经存在该字符串，则直接返回池中的引用。
         *               如果字符串常量池中不存在该字符串，则将该字符串添加到池中，并返回它的引用。
+        * String s1 = "abc";  // s1引用指向"abc"对象
+          String s2 = s1;     // s2也引用同一个"abc"对象
+          s1 = "def";         // 现在s1引用指向新的"def"对象
+                            // s2仍然引用原来的"abc"对象
         * */
     }
 }

@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /*
-* 不允许重复，不保证元素顺序 Set集合多用于去重
+* 不允许重复，不保证元素顺序 Set集合多用于去重，无序，不重复。无索引
 * HashSet：快速查找删除，不保证元素顺序，允许一个null元素
 * LinkedSet 保证元素顺序
 * TreeSet 对元素默认进行自然顺序排序，也可用提供的比较器进行排序
