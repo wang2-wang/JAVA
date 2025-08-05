@@ -32,7 +32,7 @@ public class stream1 {
                 }
         ).forEach(System.out::println);
 
-        //利用商品对象生成订单集合对象    商品名，数量，价格，总价    为了保存这些数据，先创建一个类     然后根据Skus对数据进行转化，所以用map进行
+        //利用商品对象生成订单集合对象    商品名，数量，价格，总价    为了保存这些数据，先创建一个类     然后根据Skus对数据进行转化，所以用map进行转换为order对象
         //一个商品生成一个订单用map，生成多个订单用flatmap
         //先将Skus的数据转换成流
         skus2.stream().map(sku -> {
@@ -60,5 +60,6 @@ public class stream1 {
                     amount);
             return order;
         }).collect(Collectors.toList());    //toSet,toMap
+
     }
 }
