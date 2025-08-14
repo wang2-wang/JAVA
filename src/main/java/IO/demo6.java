@@ -5,6 +5,8 @@ import java.io.IOException;
 
 /*字符流，输入流：一次读一个字节，遇到中文，一次读多个字节（utf-8）3个
         输出流：数据按照指定编码方式进行编码，变成字节再写入文件中
+        字符输入流是读取字节数据，将字节数据解码为字符数据，并存入缓冲区
+        字符输出流是将字符数据编码为字节数据，存入缓冲区，放入文件
 */
 public class demo6 {
     public static void main(String[] args) throws IOException {
